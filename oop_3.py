@@ -70,6 +70,8 @@ class Predator(Animal):
         else:
             print(f"Predator {self.id.clock_seq} don't eating")
             self.current_power -= 1
+            if self.current_power == 0:
+                forest.remove_animal(self)
 
 
 class Herbivorous(Animal):
